@@ -1,0 +1,26 @@
+#
+# Example configuration for private node cluster
+# This file should be copied to ~/.cryptix-resolver/cluster.toml
+# and edited to match the actual configuration of the cluster.
+#
+# For testing, run the resolver with the following command:
+# cargo run --release -- --trace --verbose --config-file=examples/local.toml --auto-update 
+#
+# To run under kHOST deployment, copy this file to `~/.cryptix-resolver/local.toml`.
+# Existence of `~/.cryptix-resolver/local.toml` will override any other configuration settings.
+#
+
+[[node]]
+service = "cryptix"
+transport-type = "wrpc-borsh"
+tls = true
+network = "mainnet"
+fqdn = "example1.com"
+
+[[node]]
+service = "cryptix"
+tls = true
+transport-type = "wrpc-borsh"
+network = "testnet-11"
+fqdn = "example2.com"
+
